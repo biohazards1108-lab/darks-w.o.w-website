@@ -2,87 +2,122 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Darks WoW - Private Server</title>
+  <title>Darks W.O.W — Create Account</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body class="theme-icy">
+  <!-- Background overlay -->
   <div class="bg-overlay"></div>
 
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
   <header class="site-header">
     <div class="logo-area">
       <img src="assets/img/logo.png" alt="Darks WoW Logo" class="logo">
       <div class="logo-text">
-        <h1>Darks WoW</h1>
-        <p>Frozen Realm • Custom Adventure • Dangerous Power</p>
+        <h1>Darks W.O.W</h1>
+        <p>Create Your Frozen Identity</p>
       </div>
     </div>
+
     <nav class="main-nav">
       <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="register.html">Create Account</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="register.html" class="active">Create Account</a></li>
         <li><a href="how-to-play.html">How to Play</a></li>
-        <li><a href="#features">Server Features</a></li>
-        <li><a href="#support">Support</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
   <main class="content">
     <section class="hero">
       <div class="hero-text">
-        <h2>Enter the Frozen Darkness</h2>
+        <h2>Create Your Account</h2>
         <p>
-          A World of Warcraft private server forged in ice and danger.
-          Custom rates, questlines, armor, and 100% player support.
+          Forge your identity in the frozen realm of <strong>Darks W.O.W</strong>.
+          Once your account is created, you can log in immediately after setting
+          your realmlist and downloading the game client.
         </p>
-        <div class="hero-actions">
-          <a href="register.html" class="btn btn-primary">Create Your Account</a>
-          <a href="how-to-play.html" class="btn btn-secondary">Set Realmlist & Download</a>
+      </div>
+
+      <!-- ============================================================
+           REGISTRATION FORM
+      ============================================================ -->
+      <form class="feature-card" method="POST" action="backend/register.php">
+        
+        <div class="form-row">
+          <label for="username">Account Name</label>
+          <input type="text" id="username" name="username" required minlength="3" maxlength="16">
         </div>
-      </div>
-    </section>
 
-    <section id="features" class="features">
-      <h3>Server Core Features</h3>
-      <div class="feature-grid">
-        <article class="feature-card">
-          <h4>Custom Rates</h4>
-          <p>Experience, gold, and reputation tuned for a brutal yet rewarding journey.</p>
-        </article>
-        <article class="feature-card">
-          <h4>Custom Quest Lines</h4>
-          <p>Story-driven chains that dive deep into the frozen lore of Darks WoW.</p>
-        </article>
-        <article class="feature-card">
-          <h4>Custom Armor</h4>
-          <p>Blue, icy, dangerous gear sets that stand out in any battleground.</p>
-        </article>
-        <article class="feature-card">
-          <h4>100% Player Support</h4>
-          <p>Active staff, fast ticket responses, and real help when you need it.</p>
-        </article>
-        <article class="feature-card">
-          <h4>100% Working DK Questlines</h4>
-          <p>Fully scripted Death Knight starting experience—no broken chains.</p>
-        </article>
-      </div>
-    </section>
+        <div class="form-row">
+          <label for="email">Email (for recovery)</label>
+          <input type="email" id="email" name="email" required>
+        </div>
 
-    <section id="support" class="support">
-      <h3>Need Help?</h3>
-      <p>
-        For account issues, connection problems, or bug reports, open a ticket in-game
-        or contact us via the support form (coming soon).
-      </p>
+        <div class="form-row">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required minlength="6">
+        </div>
+
+        <div class="form-row">
+          <label for="confirm_password">Confirm Password</label>
+          <input type="password" id="confirm_password" name="confirm_password" required minlength="6">
+        </div>
+
+        <div class="form-row">
+          <label for="realm">Preferred Realm</label>
+          <select id="realm" name="realm">
+            <option value="icebound">Icebound</option>
+            <option value="shadowfrost">Shadowfrost</option>
+          </select>
+        </div>
+
+        <!-- Hidden fingerprint field -->
+        <input type="hidden" name="client_fingerprint" id="client_fingerprint">
+
+        <button type="submit" class="btn btn-primary">Create Account</button>
+      </form>
     </section>
   </main>
 
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
   <footer class="site-footer">
-    <p>&copy; <span id="year"></span> Darks WoW. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> Darks W.O.W. All rights reserved.</p>
   </footer>
 
+  <!-- ============================================================
+       SCRIPTS
+  ============================================================ -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    // Auto-update footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Simple fingerprint generator
+    document.addEventListener("DOMContentLoaded", () => {
+      const fpField = document.getElementById("client_fingerprint");
+      if (fpField) {
+        fpField.value = btoa(
+          navigator.userAgent + "|" +
+          (screen.width + "x" + screen.height) + "|" +
+          new Date().getTimezoneOffset()
+        );
+      }
+    });
+  </script>
+
 </body>
 </html>
