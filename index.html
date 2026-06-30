@@ -2,21 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Darks WoW - Private Server</title>
+  <title>Darks W.O.W — Frozen Realm</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body class="theme-icy">
+  <!-- Background overlay -->
   <div class="bg-overlay"></div>
 
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
   <header class="site-header">
     <div class="logo-area">
       <img src="assets/img/logo.png" alt="Darks WoW Logo" class="logo">
       <div class="logo-text">
-        <h1>Darks WoW</h1>
+        <h1>Darks W.O.W</h1>
         <p>Frozen Realm • Custom Adventure • Dangerous Power</p>
       </div>
     </div>
+
     <nav class="main-nav">
       <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
       <ul>
@@ -29,14 +37,20 @@
     </nav>
   </header>
 
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
   <main class="content">
     <section class="hero">
       <div class="hero-text">
         <h2>Enter the Frozen Darkness</h2>
         <p>
-          A World of Warcraft private server forged in ice and danger.
-          Custom rates, questlines, armor, and 100% player support.
+          Welcome to <strong>Darks W.O.W</strong>, a World of Warcraft private server forged
+          in ice, danger, and raw power. Experience custom rates, custom questlines,
+          custom armor, and fully working Death Knight starting zones — all backed by
+          100% player support.
         </p>
+
         <div class="hero-actions">
           <a href="register.html" class="btn btn-primary">Create Your Account</a>
           <a href="how-to-play.html" class="btn btn-secondary">Set Realmlist & Download</a>
@@ -44,32 +58,43 @@
       </div>
     </section>
 
+    <!-- ============================================================
+         FEATURES
+    ============================================================ -->
     <section id="features" class="features">
       <h3>Server Core Features</h3>
+
       <div class="feature-grid">
         <article class="feature-card">
           <h4>Custom Rates</h4>
           <p>Experience, gold, and reputation tuned for a brutal yet rewarding journey.</p>
         </article>
+
         <article class="feature-card">
           <h4>Custom Quest Lines</h4>
-          <p>Story-driven chains that dive deep into the frozen lore of Darks WoW.</p>
+          <p>Story-driven chains that dive deep into the frozen lore of Darks W.O.W.</p>
         </article>
+
         <article class="feature-card">
           <h4>Custom Armor</h4>
           <p>Blue, icy, dangerous gear sets that stand out in any battleground.</p>
         </article>
+
         <article class="feature-card">
           <h4>100% Player Support</h4>
           <p>Active staff, fast ticket responses, and real help when you need it.</p>
         </article>
+
         <article class="feature-card">
           <h4>100% Working DK Questlines</h4>
-          <p>Fully scripted Death Knight starting experience—no broken chains.</p>
+          <p>Fully scripted Death Knight starting experience — no broken chains.</p>
         </article>
       </div>
     </section>
 
+    <!-- ============================================================
+         SUPPORT
+    ============================================================ -->
     <section id="support" class="support">
       <h3>Need Help?</h3>
       <p>
@@ -79,10 +104,31 @@
     </section>
   </main>
 
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
   <footer class="site-footer">
-    <p>&copy; <span id="year"></span> Darks WoW. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> Darks W.O.W. All rights reserved.</p>
   </footer>
 
+  <!-- ============================================================
+       SCRIPTS
+  ============================================================ -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    // Auto-update footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <!-- ============================================================
+       OPTIONAL: VISITOR TRACKING (DISABLED FOR GITHUB PAGES)
+       Uncomment when hosted on real PHP server
+  ============================================================ -->
+  <!--
+  <?php
+    include "backend/track_visit.php";
+  ?>
+  -->
 </body>
 </html>
