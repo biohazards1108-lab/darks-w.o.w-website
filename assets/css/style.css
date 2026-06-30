@@ -1,0 +1,307 @@
+/* ============================================================
+   DARKS W.O.W — ICY DANGER THEME
+   Author: sean (your editor)
+   Style: Blue • Icy • Dangerous • WoW Private Server
+   ============================================================ */
+
+/* ---------- ROOT VARIABLES ---------- */
+:root {
+  --bg-dark: #03040a;
+  --bg-ice: #0a1a2f;
+  --bg-ice-deep: #07101f;
+  --accent-blue: #4fd4ff;
+  --accent-blue-glow: #7fe3ff;
+  --accent-cyan: #00eaff;
+  --accent-danger: #ff3b4e;
+  --text-light: #e8f6ff;
+  --text-muted: #9bb3cc;
+  --border-ice: rgba(127, 227, 255, 0.35);
+  --shadow-ice: 0 0 25px rgba(63, 213, 255, 0.45);
+  --radius: 10px;
+  --transition: 0.25s ease;
+}
+
+/* ---------- GLOBAL RESET ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at top, #12264a 0%, #050814 55%, #000000 100%);
+  color: var(--text-light);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ---------- BACKGROUND OVERLAY ---------- */
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  background-image: url("../img/bg-ice.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.22;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ---------- HEADER ---------- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: rgba(5, 8, 20, 0.85);
+  border-bottom: 1px solid var(--border-ice);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(63, 213, 255, 0.25);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: var(--shadow-ice);
+}
+
+.logo-text h1 {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.logo-text p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ---------- NAVIGATION ---------- */
+.main-nav {
+  position: relative;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.main-nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: var(--transition);
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  border-color: var(--accent-blue);
+  background: rgba(11, 27, 51, 0.9);
+  box-shadow: var(--shadow-ice);
+}
+
+/* Mobile nav toggle */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border-ice);
+  border-radius: 999px;
+  color: var(--accent-blue-glow);
+  padding: 0.3rem 0.7rem;
+  font-size: 1.2rem;
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(5, 8, 20, 0.85);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-ice);
+  box-shadow: var(--shadow-ice);
+  animation: frostPulse 6s infinite alternate;
+}
+
+@keyframes frostPulse {
+  from { box-shadow: 0 0 20px rgba(63, 213, 255, 0.25); }
+  to { box-shadow: 0 0 40px rgba(63, 213, 255, 0.55); }
+}
+
+.hero-text h2 {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  color: var(--text-muted);
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 1px solid var(--accent-blue);
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--accent-blue);
+  color: #02040a;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--accent-blue-glow);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-ice);
+}
+
+/* ---------- FEATURE GRID ---------- */
+.features {
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+.features h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 1rem;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+}
+
+.feature-card {
+  background: rgba(5, 8, 20, 0.85);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-ice);
+  padding: 1rem;
+  transition: var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-ice);
+}
+
+.feature-card h4 {
+  color: var(--accent-blue-glow);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- SUPPORT SECTION ---------- */
+.support {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: rgba(5, 8, 20, 0.85);
+  border-radius: var(--radius);
+  border: 1px dashed var(--border-ice);
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(127, 227, 255, 0.25);
+  background: rgba(5, 8, 20, 0.9);
+}
+
+/* ---------- FORMS ---------- */
+form.feature-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+input,
+select {
+  padding: 0.6rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-ice);
+  background: rgba(11, 27, 51, 0.8);
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: var(--shadow-ice);
+}
+
+/* ---------- MOBILE RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .main-nav ul {
+    position: absolute;
+    right: 0;
+    top: 110%;
+    flex-direction: column;
+    background: rgba(5, 8, 20, 0.95);
+    padding: 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-ice);
+    display: none;
+  }
+
+  .main-nav ul.open {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  .hero {
+    padding: 1.5rem;
+  }
+}
